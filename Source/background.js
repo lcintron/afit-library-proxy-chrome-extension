@@ -2,7 +2,7 @@
 //www.luiscintron.com
 //August 2018
 //Runs when the extension is loaded for the first time.
-var dbs = [
+const dbs = [
 	'https://ieeexplore.ieee.org'
 	,'https://dl.acm.org'
 	,'https://ascelibrary.org'
