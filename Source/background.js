@@ -22,9 +22,9 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 			}
 			//if afit login site - inject js to post login
 			else if (changeInfo.status === 'complete' && tab.url.startsWith('https://afit.idm.oclc.org/login')) {
-				chrome.storage.sync.get(['user', 'pass'], function (items) {
-					if (items.user && items.pass)
-						chrome.tabs.executeScript(tabId, { code: 'var afitlibuser="' + items.user + '";var afitlibpass="' + items.pass + '";' }, function () {
+				chrome.storage.sync.get(['userInfo'], function (items) {
+					if (items.userInfo && items.userInfo.user && items.userInfo.pass && items.userInfo.verified)
+						chrome.tabs.executeScript(tabId, { code: 'var afitlibuser="' + items.userInfo.user + '";var afitlibpass="' + items.userInfo.pass + '";' }, function () {
 							chrome.tabs.executeScript(tabId, { file: 'inject.js' });
 						});
 				});

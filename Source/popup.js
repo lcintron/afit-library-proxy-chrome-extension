@@ -11,7 +11,7 @@ function btnClick(){
 		if(this.readyState === 4){
 			var valid = !this.responseText.includes('username/password provided is not valid');
 			if(valid){
-				chrome.storage.sync.set({ "user": iuser,"pass": ipass });
+				chrome.storage.sync.set({ "userInfo": {user: iuser,pass:ipass,verified:valid}});
 				document.getElementById('btnSave').innerText = 'Verified';
 			}
 		}
@@ -20,16 +20,11 @@ function btnClick(){
 	
 }
 
-chrome.storage.sync.get(['user','pass'], function(items){
-    if(items.user){
-		document.getElementById('userName').value = items.user;
-	}
-	if(items.pass){
-		document.getElementById('password').value = items.pass;
-	}
-	
-	if(items.user && items.pass){
-		document.getElementById('btnSave').innerText = 'Verified';
+chrome.storage.sync.get(['userInfo'], function(items){
+    if(items.userInfo && items.userInfo.user && items.userInfo.pass){
+		document.getElementById('userName').value = items.userInfo.user;
+		document.getElementById('password').value = items.userInfo.pass;
+		document.getElementById('btnSave').innerText = items.userInfo.verified?'Verified':"Save";
 	}
 });
 
