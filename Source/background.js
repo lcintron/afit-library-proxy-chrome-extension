@@ -2,6 +2,15 @@
 //www.luiscintron.com
 //August 2018
 //Runs when the extension is loaded for the first time.
+var dbs = [
+	'https://ieeexplore.ieee.org'
+	,'https://dl.acm.org'
+	,'https://ascelibrary.org'
+	,'https://search.proquest.com'
+	,'https://www.sciencedirect.com'
+	,'https://*.scitation.org'
+];
+
 document.addEventListener('DOMContentLoaded', function () {
 	console.log('Extension loaded.');
 }, false);
@@ -11,12 +20,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 	if (changeInfo.status === 'loading' || changeInfo.status === 'complete') {
 		chrome.tabs.query({ 'active': true, 'lastFocusedWindow': true }, function (tabs) {
 
-			if (tab.url.startsWith('https://ieeexplore.ieee.org')
-				|| tab.url.startsWith('https://dl.acm.org')
-				|| tab.url.startsWith('https://ascelibrary.org')
-				|| tab.url.startsWith('https://search.proquest.com')
-				|| tab.url.startsWith('https://www.sciencedirect.com')
-			) {
+			if(dbs.find(url => Utils.compareUrlDomain(tab.url, url))){
 				let rUrl = 'https://afit.idm.oclc.org/login?url=' + tab.url;
 				chrome.tabs.update(tab.id, { url: rUrl });
 			}

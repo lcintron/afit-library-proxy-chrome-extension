@@ -7,4 +7,6 @@ QUnit.test( "Utils Tests", function( assert ) {
     assert.ok(Utils.compareUrlDomain('https://api.scitation.org/this/is/a/test', 'https://*.scitation.org'), "Expect True same urls, wildcard(*) for subdomain - diff path" );
     assert.ok(!Utils.compareUrlDomain('https://api.scitation1.org/this/is/a/test', 'https://*.scitation.org'), "Expect False diff domain urls, wildcard(*) for subdomain - diff path" );
     assert.ok(!Utils.compareUrlDomain('https://api.scitation.1org/this/is/a/test', 'https://*.scitation.org'), "Expect False diff TLD urls, wildcard(*) for subdomain - diff path" );
+    assert.ok(!Utils.compareUrlDomain('https://aip-scitation-org.afit.idm.oclc.org/action/doSearch?appendWebsiteFilter=false&AllField=software', 'https://*.scitation.org'), "Expect False diff diff urls, wildcard(*) for subdomain - diff path" );
+    
 });

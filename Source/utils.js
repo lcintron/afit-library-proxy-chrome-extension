@@ -4,9 +4,9 @@ Utils.compareUrlDomain = function(sourceUrl, urlDomainToMatch) {
     if (sourceUrl.length >= urlDomainToMatch.length) {
         let j = 0;
         for (let i = 0; i < urlDomainToMatch.length; i++) {
-            while(urlDomainToMatch[i] === '*' && j< urlDomainToMatch.length && sourceUrl[j]!=='.'){
+            while(urlDomainToMatch[i] === '*' && j < sourceUrl.length && sourceUrl[j]!=='.'){
                 j++;
-                if(j>= urlDomainToMatch.length)
+                if(j>= sourceUrl.length)
                     return true;
             }
 
