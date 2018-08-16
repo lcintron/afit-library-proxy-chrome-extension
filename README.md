@@ -6,6 +6,7 @@ Google Chrome extension that automatically redirects on-line databases using AFI
 - ACM Digital Library
 - ProQuest
 - Science Direct
+- Scitation.org
 
 ## Features
   * Automatic login on AFIT Off-Campus Proxy.
