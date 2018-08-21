@@ -8,17 +8,15 @@ var afitproxy = {
 		document.getElementById('afitoverlaytext').innerText = 'Loading...';
 	},
 	login: function () {
-		if (afitlibuser && afitlibpass) {
-			document.getElementsByName('user')[0].value = afitlibuser;
-			document.getElementsByName('pass')[0].value = afitlibpass;
-			document.getElementsByTagName('form')[0].submit();
-		}else{
-			document.getElementById("afitoverlay").style.display = "none";
-		}
+		document.getElementsByName('user')[0].value = afitlibuser;
+		document.getElementsByName('pass')[0].value = afitlibpass;
+		document.getElementsByTagName('form')[0].submit();
 	},
 	execute: function () {
-		afitproxy.displayOverlay();
-		afitproxy.login();
+		if (afitlibuser && afitlibpass) {
+			afitproxy.displayOverlay();
+			afitproxy.login();
+		}
 	}
 };
 
