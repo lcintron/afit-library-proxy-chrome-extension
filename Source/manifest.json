@@ -1,6 +1,6 @@
 {
-  "name": "AFIT Library Off-Campus Database Proxy",
-  "description": "Automatically redirects on-line databases using AFIT Proxy with credentials provided by the AFIT Library.",
+  "name": "ALP",
+  "description": "ALP automatically redirects links to on-line research databases to the AFIT authenticated link.",
   "version": "1.0",
   "permissions": [
     "tabs",
