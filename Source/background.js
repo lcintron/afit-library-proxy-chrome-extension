@@ -9,6 +9,8 @@ const dbs = [
 	, 'https://search.proquest.com'
 	, 'https://www.sciencedirect.com'
 	, 'https://*.scitation.org'
+	, 'https://www.taylorfrancis.com'
+	, 'https://www.tandfonline.com'
 ];
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -30,6 +32,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 				chrome.storage.sync.get(['userInfo'], function (items) {
 					if (items.userInfo && items.userInfo.user && items.userInfo.pass && items.userInfo.verified)
 						chrome.tabs.executeScript(tabId, { code: 'var afitlibuser="' + items.userInfo.user + '";var afitlibpass="' + items.userInfo.pass + '";' }, function () {
+							
 							chrome.tabs.executeScript(tabId, { file: 'inject.js' });
 						});
 				});
