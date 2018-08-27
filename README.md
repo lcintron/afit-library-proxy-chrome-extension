@@ -7,6 +7,7 @@ ALP is a Google Chrome extension that automatically redirects links to on-line r
 - ProQuest
 - Science Direct
 - Scitation.org
+- Taylor & Francis Online
 
 ## Features
   * Automatic login on AFIT Off-Campus Proxy.
