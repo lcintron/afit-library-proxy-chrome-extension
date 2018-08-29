@@ -1,6 +1,6 @@
 {
   "name": "ALP",
-  "description": "ALP automatically redirects links to on-line research databases to the AFIT authenticated link.",
+  "description": "ALP automatically redirects links to on-line research databases to the AFIT authenticated resource.",
   "version": "1.0",
   "permissions": [
     "tabs",
