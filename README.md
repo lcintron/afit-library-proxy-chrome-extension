@@ -1,6 +1,8 @@
 # ALP (afit-library-proxy)
 ALP is a Google Chrome extension that automatically redirects links of compatible on-line research databases to the AFIT off-campus proxy portal to get full access to the requested content. If credentials are stored, automatically logs you in and redirects you to the database entry. Login credentials are provied by the AFIT Library strictly for  access to their database proxy and not used for authentication or access to anything else.
 
+What problem does it solve? Users who use search engines or other means to do their literature review no longer need to copy the paper ID or link for the library in question and then access the same site through AFIT's Library Proxy system. ALP does it automatically for you once it notices that you are accessing the file of a library resource supported by AFIT's Library.
+
 ## Supported Databases
 - IEEE Xplore
 - ACM Digital Library
